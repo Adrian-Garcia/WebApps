@@ -1,0 +1,34 @@
+/*
+* elementName
+* #id
+* .class
+targetName {
+	properlyName1: value;
+	properlyName2: value;
+	.
+	.
+	.
+	properlyNameN: value;
+}
+*/
+
+/*Target h1*/
+h1 {
+	color: #AAAAAA;
+	background-color: green;
+}
+
+/*Target paragraph*/
+p {
+
+}
+
+/*Target ID heading*/
+#heading {
+
+}
+
+/*Target class container*/
+.container {
+
+}

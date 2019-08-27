@@ -12,10 +12,43 @@ targetName {
 }
 */
 
+/*Restart values of margin and padding*/
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #4F545F;
+	font-size: 13px;
+	font-family: Verdana, Sans-serif;
+}
+
 /*Target h1*/
 h1 {
-	color: #AAAAAA;
-	background-color: green;
+	padding: 20px;
+	margin: 0;
+	color: white;
+	background-color: #55B3C5; 
+}
+
+/*Target fieldset*/
+fieldset {
+	border: 2px dashed #000;
+	margin: 20px;
+	padding: 20px;
+}
+
+fieldset > div {
+	border: 1px solid #6278B0;
+	color: #42579C;
+	background-image: url("https://cdn3.iconfinder.com/data/icons/bold-blue-glyphs-free-samples/32/Info_Circle_Symbol_Information_Letter-512.png"); 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1.5% 90%;
+}
+
+/*Target legend*/
+legend {
+	font-size: 1.3em;
+	font-weight: 900; /* 1 - 999 */
 }
 
 /*Target paragraph*/
@@ -31,4 +64,13 @@ p {
 /*Target class container*/
 .container {
 
+}
+
+.element {
+	padding: 10px;
+	padding-top: 5px;
+	padding-right: 15px;
+	padding-left: 20px;
+	padding bottom: 10px;
+	padding: 5px 15px 10px 20px;
 }

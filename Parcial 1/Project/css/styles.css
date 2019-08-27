@@ -12,6 +12,10 @@ targetName {
 }
 */
 
+* {
+	box-sizing: border-box;
+}
+
 /*Restart values of margin and padding*/
 body {
 	margin: 0px;
@@ -37,6 +41,7 @@ fieldset {
 }
 
 fieldset > div {
+	/*background: url() no-repeat center #42579C*/
 	border: 1px solid #6278B0;
 	color: #42579C;
 	background-image: url("https://cdn3.iconfinder.com/data/icons/bold-blue-glyphs-free-samples/32/Info_Circle_Symbol_Information_Letter-512.png"); 
@@ -73,4 +78,31 @@ p {
 	padding-left: 20px;
 	padding bottom: 10px;
 	padding: 5px 15px 10px 20px;
+}
+
+.formElement, select {
+	padding: 5px 10px;
+	width: 250px;
+}
+
+.formButton {
+	text-align: center;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: 0;
+	border-radius: 5px;
+}
+
+.formButton:hover {
+	cursor: pointer;
+}
+
+#submitButton {
+	text-align: center;
+	color: #56CC6F;
+}
+
+#cancelButton {
+	color: red;
+	text-align: center;
 }

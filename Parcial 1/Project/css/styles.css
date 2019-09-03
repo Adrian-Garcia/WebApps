@@ -66,6 +66,25 @@ p {
 
 }
 
+#navMenu {
+	list-style: none;
+	background-color: #ccc;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#navMenu > li {
+	float: left;
+	padding: 0;
+}
+
+#navMenu > li:hover {
+	color: white;
+	cursor: pointer;
+	background-color: #999;
+}
+
 /*Target class container*/
 .container {
 

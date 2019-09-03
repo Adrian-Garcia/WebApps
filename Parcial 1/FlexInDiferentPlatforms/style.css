@@ -1,0 +1,111 @@
+/* Mobile */
+@media (max-width: 599px) {
+  
+  .mainContainer{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .leftSide {
+    border: 1px solid black;
+    padding: 10px; 
+  }
+
+  .item {
+    border: 1px solid black;
+    padding: 10px; 
+  }
+
+  .rightSide {
+    border: 1px solid black;
+    padding: 10px; 
+  }
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 990px) {
+  
+  div{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .mainContainer{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .leftSide{
+    width: 30%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  .rightSide{
+    width: 70%;
+  }
+
+  .rightTop, .rightBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .rightItem{
+    width: 30%;
+    text-align: center;
+  }
+
+  .leftItem1{
+    align-self: flex-start;
+  }
+
+  .leftItem2{
+    align-self: center;
+  }
+}
+
+/* PC */
+@media (min-width: 991px) {
+  div{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .mainContainer{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .leftSide{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  .rightSide{
+    width: 70%;
+  }
+
+  .rightTop, .rightBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .rightItem{
+    width: 30%;
+    text-align: center;
+  }
+
+  .leftItem1{
+    align-self: flex-start;
+  }
+
+  .leftItem2{
+    align-self: center;
+  }
+}

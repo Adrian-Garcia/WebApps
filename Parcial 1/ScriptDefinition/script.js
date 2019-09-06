@@ -121,11 +121,12 @@ numbers.splice(2,0,8); 	// [1,2,8,3,4,5,6,7]
 // string
 let name = 'Fernanda Manzanita';
 
-// Horrible way
-let newHTML = '<div>' +
-				'<div>' +
-			  '</div>' +
-			'</div>';
+// Not cool way
+let newHTML = 	'<div>' +
+					'<div>' +
+						'${obj.firstName}' +
+			  		'</div>' +
+				'</div>';
 
 // Cool way
 let bestHTML = `<div>
@@ -134,3 +135,18 @@ let bestHTML = `<div>
 					</div>
 				</div>
 				`;
+
+// Get value of submit buton
+let submitButon = document.getElementById('submitButon');
+
+// Get Elements by Tag Name
+let table = document.getElementsByTagName('table');
+
+// Get elements by name
+let varName = document.getElementByName("gender"); // Name of the atribute
+
+// Will return <input class="formElement"...>
+let fullName = document.getElementById("fullName");
+
+// Will return Fer Manzanita
+fullName.value;

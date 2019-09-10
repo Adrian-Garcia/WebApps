@@ -73,7 +73,7 @@ menu.addEventListener('click', (event) => {
 	}
 
 	// If sex was not selected
-	if (!(male && male.value) && !(female && female.value)) {
+	if (!(male && male.checked) && !(female && female.checked)) {
 		let genderDoc = document.getElementById("genderMessage");
 		genderDoc.innerHTML = "Please select gender";
 	} else {

@@ -16,9 +16,10 @@
 		<li>Copyright</li>
 	</ul>
 
-	<form>
+	<form id="menu">
+	
 		<fieldset>
-			
+
 			<legend>New Account registry</legend>
 			
 			<div clas="info">
@@ -30,18 +31,22 @@
 
 			<label>Complete Name</label> <br>
 			<input clas="formElement" type="text" id="name">
+			<span class="message" id="nameMessage"></span>
 			<br><br>
 
 			<label>Email</label> <br>
 			<input clas="formElement" type="email" id="email">
+			<span class="message" id="emailMessage"></span>
 			<br><br>
 
 			<label>Password</label> <br>
 			<input clas="formElement" type="password" id="pwd">
+			<span class="message" id="pwdMessage"></span>
 			<br><br>
 
 			<label>Passoword confirmation</label> <br>
 			<input clas="formElement" type="password" id="pwdConf">
+			<span class="message" id="pwdConfMessage"></span>
 			<br><br>
 
 			<label>Country</label><br>
@@ -51,13 +56,17 @@
 				<option value="Fr">France</option>
 				<option value="Gr">Germany</option>
 			</select>
+			<span class="message"></span>
 			<br><br>
 
 			<input type="radio" id="male" name="sex">
-			<label for="male">Masculine</label> <br><br>
+			<label for="male">Masculine</label> 
+			<br><br>
 
 			<input type="radio" id="female" name="sex">
-			<label for="female">Femenine</label> <br><br>
+			<label for="female">Femenine</label> 
+			<span class="message" id="genderMessage"></span>
+			<br><br>
 
 			<button class="formButton" id="cancelButton" >Cancel</button>
 			<input class="formButton" id="submitButton" type="submit" value="Submit">

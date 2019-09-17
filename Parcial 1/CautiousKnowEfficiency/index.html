@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      This is my first html page
+    </title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+  </head> 
+  <body>
+    <header>
+      <h1> 
+        Registry Form 
+      </h1>
+    </header>
+    <nav>
+      <ul id="menu">
+        <li id="home"> 
+          Home 
+        </li>
+        <li id="about"> 
+          About the site 
+        </li>
+        <li id="registry" class="selected"> 
+          Registry 
+        </li>
+        <li id="contact"> 
+          Contact 
+        </li>
+        <li id="copyright"> 
+          Copyright 
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section id="registrySection" class="currentSelected">
+        <form>
+          <fieldset>
+            <legend>
+              New Account Registry
+            </legend>
+            <span class="info"> 
+              Your information is safe with us 
+            </span>
+            <p>
+              <label for="fullName"> Complete name </label>
+            </p>
+            <input class="formElement" id="fullName" type="text" /> 
+            <span class="errorMessage" id="fullNameErrorMessage">  </span>
+            <p>
+              <label for="email"> Email </label>
+            </p>
+            <input class="formElement" id="email" type="text"/>
+            <span class="errorMessage" id="emailErrorMessage" hidden>Please provide your email</span>
+            <p>
+              <label for="password"> Password </label>
+            </p>
+            <input class="formElement" id="password" type="password"/>
+            <span class="errorMessage" id="passwordErrorMessage"></span>
+
+            <p>
+              <label for="passwordConfirmation"> Password confirmation </label>
+            </p>
+            <input class="formElement" id="passwordConfirmation" type="password"/>
+            <span class="errorMessage" id="passwordConfErrorMessage"></span>
+            <p>Country</p>
+            <select id="country">
+              <option value="0"> Select a country... </option>
+              <option value"MX"> México </option>
+              <option value="US"> USA </option>
+              <option value="FR"> France </option>
+            </select>
+            <span class="errorMessage" id="countryErrorMessage"> </span>
+            <p>
+              Gender 
+              <span class="errorMessage" id="genderErrorMessage" ></span>
+            </p> 
+            <p>
+              <input type="radio" name="gender" id="masculine" value="M"/> <label for="masculine"> Masculine </label>
+            </p>
+            <p>
+              <input type="radio" name="gender" id="feminine" id="value="F"/> <label for="feminine"> Feminine </label>
+            </p>
+            <input class="buttonHover" id="cancelButton" type="submit" value="Cancel"/>
+            <input class="buttonHover" id="submitButton" type="submit" value="Submit"/>
+          </fieldset>
+        </form>
+      </section>
+      <section id="homeSection" hidden>
+        This is the home
+      </section>
+      <section id="aboutSection" hidden>
+        This is the about
+      </section>
+      <section id="contactSection" hidden>
+        This is the contact
+      </section>
+      <section id="copyrightSection" hidden>
+        This is the copyright
+      </section>
+    </main>
+    <script src="./js/index.js" type="text/javascript"> </script>
+  </body> 
+</html>
+

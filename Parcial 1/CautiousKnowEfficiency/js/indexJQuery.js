@@ -5,36 +5,28 @@ function watchForm(){
     event.preventDefault();
     
     // Validate the fullName input
-    let fullName = document.getElementById( "fullName" );
-    let fullNameErrorMessage = document.getElementById( "fullNameErrorMessage" );
-
-    if ( fullName.value === "" ){
-      fullNameErrorMessage.textContent = "Please provide your name";
+    if ( $("#fullName").val() === "" ){
+      $("#fullNameErrorMessage").text("Please provide your name");
     }
     else{
-      fullNameErrorMessage.textContent = "";
+      $("#fullNameErrorMessage").text("");
     }
 
     // Validate the email input
-    let email = document.getElementById( "email" );
-    let emailErrorMessage = document.getElementById( "emailErrorMessage" );
-
-    if ( email.value === "" ){
-      emailErrorMessage.hidden = false;
+    if ( $("#email").val() === "" ){
+      $("#emailErrorMessage").show();
     }
     else{
-      emailErrorMessage.hidden = true;
-    }
+      $("#emailErrorMessage").hide();
+    }    
 
     // Validate dropdown menu
-    let country = document.getElementById( "country" );
-    let countryErrorMessage = document.getElementById( "countryErrorMessage" );
 
-    if ( country.value === "0" ){
-      countryErrorMessage.textContent = "Please select a country";
+    if ( $("#country").val() === "0" ) {
+      $("#countryErrorMessage").text("Please select a country");
     }
     else{
-      countryErrorMessage.textContent = "";
+      $("#countryErrorMessage").text("");
     }
 
     // Validate gender inputs

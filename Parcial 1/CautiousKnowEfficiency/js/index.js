@@ -72,7 +72,6 @@ function watchForm(){
 
       let currentSelected = document.getElementsByClassName( "currentSelected" );
 
-     
       currentSelected[0].hidden = true;
       currentSelected[0].className = "";
 

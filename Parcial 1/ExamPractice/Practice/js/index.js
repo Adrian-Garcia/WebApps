@@ -48,7 +48,14 @@ menu.addEventListener('click', (event) => {
 
 menu2.addEventListener('click', (event) => {
 
-	console.log("A");
+	event.preventDefault();
+
 	let spans = document.getElementsByTagName("SPAN");
-	spans[4].innerHTML = "AAAAAAAAAAAAAAAa";
+
+	if (!spans[4].value)
+		spans[4].innerHTML = "AAAAAAAAAAAAAAAA";
+
+	else 
+		spans[4].innerHTML = '';
+	
 });

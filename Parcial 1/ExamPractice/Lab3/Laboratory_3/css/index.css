@@ -27,24 +27,161 @@ body {
 		align-self: center;
 	}
 
+	.menu > li {
+		display: inline;
+		flex-direction: row;
+		color: white;
+		padding-left: 10%;
+		font-weight: bold;
+	}
+
+	nav {
+		background-color: grey;
+		padding-top: 1%;
+		padding-bottom: 1%
+	}
+
+	main {
+		display: flex;
+		margin: 2%;
+		flex-direction: row;
+	}
+
+	section {
+		border: 1px solid grey;
+		border-radius: 5px;
+		padding: 10px; 
+		margin: 10px;
+		width: 33%;
+		text-align: center; 
+	}
+
+	p {
+		text-align: left;
+	}
+
+	footer {
+		margin-top: -2%;
+		border-top: 1px solid grey;
+		padding-left: 14%;
+	}
+
+	.social > li {
+		display: inline;
+		padding-right: 38%;
+	}
+
 	.logo {
 		width: 30%;
 	}
 
-	li {
-		display: flex;
-		flex-direction: row;
+	.hamburger {
+		display: none;
 	}
 
-
+	.menu {
+		margin-left: 70%;
+	}
 }
 
 /* Tablet */
 @media (min-width: 600px) and (max-width: 990px) {
+
+	header {
+		margin-left: 15%;
+		display: flex;
+		flex-direction: row;
+	}
+
+	h1 {
+		margin-left: 20%;
+	}
+
+	nav {
+		padding-left: 95%;
+		color: white;
+		background-color: grey;
+		align-items: left;
+	}
+
+	section {
+		border: solid grey 1px;
+		border-radius: 5px; 
+		margin: 3%;
+		padding-top: 2%;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	p {
+		text-align: left;
+		margin: 3%;
+	}
+
+	.menu > li {
+		display: none;
+	}
+
+	.social > li {
+		display: inline;
+		margin-left: 20%;
+	}
+
+	.social {
+		padding-top: 1%;
+		padding-left: 10%;
+		border-top: 1px solid gray;
+	}
+
+	.logo {
+		margin-top: 2%;
+	}
 
 }
 
 /* Mobile */
 @media (max-width: 599px) {
 
+	header {
+		margin: 2%;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	nav {
+		background-color: gray;
+		color: white;	
+		padding-left: 95%;
+	}
+
+	section {
+		padding: 2%;
+		margin: 2%;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid gray;
+		border-radius: 5px;
+		text-align: center;
+	}
+
+	p {
+		text-align: left;
+	}
+
+	.social {
+		margin-left: -5%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.social > li {
+		display: inline;
+	}
+
+	.menu > li {
+		display: none;
+	}
 }

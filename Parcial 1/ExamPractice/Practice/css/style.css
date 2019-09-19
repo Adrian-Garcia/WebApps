@@ -1,8 +1,37 @@
 * {
 	margin: 0%;
 	padding: 0%;
+	font-family: Helvetica;
 }
 
-@media (max-width: 599px) {
+header {
+
+	margin: 2%;
+	display: flex;
 	
+	justify-content: space-evenly;
+	/*flex-direction: row;*/
+	/*justify-content: flex-start;*/
+	/*justify-content: flex-end;*/
+	/*justify-content: center;*/
+	/*justify-content: space-between;*/
+	
+	align-items: center;
+	/*align-items: flex-start;*/
+	/*align-items: flex-end;*/
+	/*align-items: stretch;*/
+	/*align-items: baseline;*/
+}
+
+main {
+	margin: 2%;
+	margin-top: 4%;
+}
+
+section {
+	display: flex; 
+	justify-content: space-evenly;
+}
+
+.input {
 }

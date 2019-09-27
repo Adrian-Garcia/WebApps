@@ -1,5 +1,19 @@
 function main() {
 
+  // Salazar's form
+  $(".thumbnail").on("click", function(event) {
+    
+    event.preventDefault();
+
+    // Get current Thumbnail
+    let currentThumbnail = $(this).html();
+    
+    // Change hero class 
+    $('.hero').html(currentThumbnail);
+  });
+
+  /* My form
+
   let cats = document.getElementsByClassName("thumbnail");
   let hero = document.getElementsByClassName("hero");
 
@@ -21,5 +35,6 @@ function main() {
         $(".hero").children().attr('src', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-65/cat4.jpg');
     }); 
   }
+  */
 
 } main();

@@ -8,3 +8,18 @@ fetch(url, settings)
 	.then(responseJSON, function() {
 		// Logic to get info
 	})
+
+
+// Structure
+$.ajax ({
+	url:; 																// url/endpoint-to-API
+	method: "GET"; 			
+	data: {},															// info to set the API
+	dataType: "json",											// returned type of the response
+	contentType: "application/json", 			// type of sent data in the request
+	success: function(responseJSON) {
+
+	},
+
+	error: function(err){}
+});

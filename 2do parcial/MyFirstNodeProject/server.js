@@ -15,24 +15,29 @@ let morgan =require ('morgan'); 	// To log actions in the console
 
 let app = express();			// Hold all the features that that function have
 
+app.use(express.static('public'));
 app.use(morgan('dev'));
 
 let nameOfPets = [
 	{
 		name: "Burbuja",
-		typeOfPet: "Dog"
+		typeOfPet: "Dog",
+		id: "1"
 	},
 	{
 		name: "Kia",
-		typeOfPet : "Dog"
+		typeOfPet : "Dog",
+		id: "2"
 	},
 	{
 		name: "Jagger",
-		typeOfPet : "Dog"
+		typeOfPet : "Dog",
+		id: "3"
 	},
 	{
 		name: "kirby",
-		typeOfPet : "Dog"
+		typeOfPet : "Dog",
+		id: "4"
 	}
 ];
 
@@ -43,20 +48,31 @@ let nameOfPets = [
 app.get( '/api/pets', (req, 	res, 	  next) => {
 
 	console.log ( "Req query", req.query );
-
 	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
 
+	/* errors
+	res.statusMessage = "Something went wrong";
+	return res.status(400).json ({				// status(400) is error status code
+		code:400,
+		message: "Something went wrong"
+	}) */
 });
 
 app.get( '/api/pets/:id', (req, 	res, 	  next) => {
 
 	console.log ( "Req param", req.params );
-
 	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
 
 });
 
+app.get( '/api/pets/byId:id', (req,		res,	  next) => {
 
+	console.log ( "Req param", req.params);
+	console.log (req);
+
+	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
+
+});
 
 app.listen('8080', () => {
 

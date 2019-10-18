@@ -44,8 +44,8 @@ let nameOfPets = [
 /* Middleware
 	a function that is execute previous that any other */
 
-// 		       request	response  next
-app.get( '/api/pets', (req, 	res, 	  next) => {
+// 		       						request		response  next
+app.get( '/api/pets', (	req, 			res, 	  	next) => {
 
 	console.log ( "Req query", req.query );
 	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
@@ -65,7 +65,8 @@ app.get( '/api/pets/:id', (req, 	res, 	  next) => {
 
 });
 
-app.get( '/api/pets/byId:id', (req,		res,	  next) => {
+// http://localhost:8080/api/pets/byId?id=
+app.get( '/api/getById/:id', (req,		res,	  next) => {
 
 	console.log ( "Req param", req.params);
 	console.log (req);
@@ -73,6 +74,19 @@ app.get( '/api/pets/byId:id', (req,		res,	  next) => {
 	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
 
 });
+
+// add.post('/api/postPet/:id', (req,		res,	  next) => {
+
+// 	return res.status(201).json (nameOfPets);	
+// });
+
+// add.delete('/api/removePet/:id', (req,		res,	  next) => {
+// 	return res.status(200).json (nameOfPets);	
+// });
+
+// add.put('/api/updatePet/:id', (req,		res,	  next) => {
+// 	return res.status(200).json (nameOfPets);	
+// });
 
 app.listen('8080', () => {
 

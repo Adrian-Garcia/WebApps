@@ -1,11 +1,11 @@
 /*
 How to create a Node.js project
 
-	1. 	npm init
+	1.	npm init
 
-	2. 	npm install name-package 	In this case, name-package is express
+	2.	npm install name-package 	In this case, name-package is express
 
-	3. 	npm start
+	3.	npm start
 
 	3.5	nodemon nameOfFile.js		In this case, nameOfFile.js is server.js
 */

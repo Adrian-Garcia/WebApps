@@ -1,95 +1,169 @@
-/*
-How to create a Node.js project
+let express = require('express');
+let morgan = require('morgan');
+let bp = require('body-parser');
+let jsonParser = bp.json();
 
-	1.	npm init
-
-	2.	npm install name-package 	In this case, name-package is express
-
-	3.	npm start
-
-	3.5	nodemon nameOfFile.js		In this case, nameOfFile.js is server.js
-*/
-
-let express = require('express'); 	// Similar to #include <> or import
-let morgan =require ('morgan'); 	// To log actions in the console
-
-let app = express();			// Hold all the features that that function have
+let app = express();
 
 app.use(express.static('public'));
+
 app.use(morgan('dev'));
 
 let nameOfPets = [
-	{
-		name: "Burbuja",
-		typeOfPet: "Dog",
-		id: "1"
-	},
-	{
-		name: "Kia",
-		typeOfPet : "Dog",
-		id: "2"
-	},
-	{
-		name: "Jagger",
-		typeOfPet : "Dog",
-		id: "3"
-	},
-	{
-		name: "kirby",
-		typeOfPet : "Dog",
-		id: "4"
-	}
+    {
+        name: "Burbuja",
+        typeOfPet: "Dog",
+        id: 1
+    },
+    {
+        name: "Kia",
+        typeOfPet: "Dog",
+        id: 2
+    },
+    {
+        name: "Jagger",
+        typeOfPet: "Dog",
+        id: 3
+    },
+    {
+        name: "Kirby",
+        typeOfPet: "Dog",
+        id: 4
+    }
 ];
 
-/* Middleware
-	a function that is execute previous that any other */
+app.post("/api/pets/addPet", jsonParser, (req, res, next) => {
+    console.log(req.body);
 
-// 		       						request		response  next
-app.get( '/api/pets', (	req, 			res, 	  	next) => {
+    if (req.body.name && req.body.typeOfPet && req.body.id) {
+        for (let i = 0; i < nameOfPets.length; i++) {
+            if (nameOfPets[i].id == req.body.id) {
+                res.statusMessage = "Repeated identifier";
+                return res.status(406).json({
+                    code: 409,
+                    message: res.statusMessage
+                });
+            }
+        }
 
-	console.log ( "Req query", req.query );
-	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
+        nameOfPets.push(req.body);
 
-	/* errors
-	res.statusMessage = "Something went wrong";
-	return res.status(400).json ({				// status(400) is error status code
-		code:400,
-		message: "Something went wrong"
-	}) */
+        let pet = nameOfPets[nameOfPets.length - 1];
+        res.statusMessage = "Pet added succesfully";
+        return res.status(200).json(pet);
+    } else {
+        res.statusMessage = "Missing field in body";
+        return res.status(406).json({
+            code: 406,
+            message: res.statusMessage,
+            body: req.body,
+            params: req.params
+        });
+    }
+
+    
 });
 
-app.get( '/api/pets/:id', (req, 	res, 	  next) => {
+app.put("/api/pets/updatePet/:id", jsonParser, (req, res, next) => {
+    console.log(req.body);
+    console.log(req.params);
 
-	console.log ( "Req param", req.params );
-	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
+    if (req.body.name && req.body.typeOfPet && req.body.id) {
+        if (req.body.id == req.params.id) {
+            for (let i = 0; i < nameOfPets.length; i++) {
+                if (nameOfPets[i].id == req.body.id) {
+                    nameOfPets[i] = req.body;
+                    res.statusMessage = "Pet updated succesfully";
+                    return res.status(200).json(nameOfPets[i]);
+                }
+            }
+            
+            res.statusMessage = "Pet not in the list";
+            return res.status(404).json({
+                code: 404,
+                message: res.statusMessage
+            });
+        } else {
+            res.statusMessage = "Bad request id in param most match id in body";
+            return res.status(409).json({
+                code: 409,
+                message: res.statusMessage,
+                body: req.body,
+                params: req.params
+            });
+        }
+    } else {
+        res.statusMessage = "Missing field in body";
+        return res.status(406).json({
+            code: 406,
+            message: res.statusMessage,
+            body: req.body,
+            params: req.params
+        });
+    }
 
 });
 
-// http://localhost:8080/api/pets/byId?id=
-app.get( '/api/getById/:id', (req,		res,	  next) => {
+app.delete("/api/pets/removePet/:id", jsonParser, (req, res, next) => {
+    console.log(req.params);
 
-	console.log ( "Req param", req.params);
-	console.log (req);
+    for (let i = 0; i < nameOfPets.length; i++) {
+        if (nameOfPets[i].id == req.params.id) {
+            let pet = nameOfPets.splice(i,1);
 
-	return res.status(200).json (nameOfPets);	// status(200) is sucssess status code
+            res.statusMessage = "Pet erase succesfully";
+            return res.status(200).json(pet);
+        }
+    }
 
+    res.statusMessage = "Pet not found";
+    return res.status(404).json({
+        code: 404,
+        message: res.statusMessage
+    });
 });
 
-// add.post('/api/postPet/:id', (req,		res,	  next) => {
+app.get('/api/pets', (req, res, next) => {
 
-// 	return res.status(201).json (nameOfPets);	
-// });
+    console.log("Req query ", req.query);
 
-// add.delete('/api/removePet/:id', (req,		res,	  next) => {
-// 	return res.status(200).json (nameOfPets);	
-// });
+    // res.statusMessage = "Something went wrong";
+    // return res.status(400).json({
+    //     code: 400,
+    //     message: res.statusMessage
+    // });
 
-// add.put('/api/updatePet/:id', (req,		res,	  next) => {
-// 	return res.status(200).json (nameOfPets);	
-// });
+    return res.status(200).json(nameOfPets);
+});
+
+app.get('/api/pets/byId', (req, res, next) => {
+
+    console.log("Req params", req.params);
+    console.log("Req query", req.query);
+
+    let id = req.query.id;
+
+    if (id) {
+        if (nameOfPets[id]) {
+            res.statusMessage = "The pet was found";
+            return res.status(200).json(nameOfPets[id]);
+        } else {
+            res.statusMessage = "The pet wasn't found";
+            return res.status(404).json({
+                code: 404,
+                message: "The pet wasn't found"
+            });
+        }
+    } else {
+        res.statusMessage = "Missing ID param";
+        return res.status(406).json({
+            code: 406,
+            message: "Missing ID param"
+        });
+    }
+});
 
 app.listen('8080', () => {
-
-	console.log( "App running on localhost:8080" );
-
+    console.log("app running on localhost:8080")
 });
+

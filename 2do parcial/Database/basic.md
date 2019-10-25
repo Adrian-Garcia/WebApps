@@ -112,5 +112,5 @@ SET Values
 	17. Remove
 		db.restaurant.remove( { _id: doc._id})
 
-	6. Exit with
+	18. Exit with
 		Ctr + C	

@@ -5,9 +5,9 @@
 	202		Accepted			Request recibed, but not excecuted yet
 	400 	Bad Request 		Bad request on client
 	404  	Not Found			Host have server conection, but the resource was not found 
-	406 	Not acceptable		El servidor no es capaz de devolver los datos en ninguno de los formatos aceptados por el cliente
+	406 	Not acceptable		Server is not able to return data in any accepted format
 	409		Conflict 			Conflict with a rule 
-____________________________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________________
 
 #Mongo comands
 	

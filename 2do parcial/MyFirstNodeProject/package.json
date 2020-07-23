@@ -11,6 +11,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "morgan": "^1.9.1",
-    "parse": "^2.8.0"
+    "parse": "^2.10.0"
   }
 }
